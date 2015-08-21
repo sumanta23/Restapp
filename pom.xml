@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.sumanta</groupId>
-    <artifactId>Restapp</artifactId>
-    <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <name>Webapp</name>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.sumanta</groupId>
+	<artifactId>Restapp</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>Webapp</name>
 
-    
-    <properties>
-    	<encoding>UTF-8</encoding>
+
+	<properties>
+		<encoding>UTF-8</encoding>
 		<version.java>1.7</version.java>
 		<version.maven-compiler>3.1</version.maven-compiler>
 		<version.eclipse-plugin>2.9</version.eclipse-plugin>
@@ -19,64 +19,82 @@
 
 		<version.javax.servlet-api>3.0.1</version.javax.servlet-api>
 		<version.servlet-api>2.5</version.servlet-api>
-        <version.jsp-api>2.2</version.jsp-api>
-        <version.jsr311-api>1.1.1</version.jsr311-api>
+		<version.jsp-api>2.2</version.jsp-api>
+		<version.jsr311-api>1.1.1</version.jsr311-api>
+		<version.resteasy>2.3.6.Final</version.resteasy>
 	</properties>
-    
-    
-    <dependencies>
-    <dependency>
-	<groupId>javax.servlet</groupId>
-	<artifactId>javax.servlet-api</artifactId>
-	<version>${version.javax.servlet-api}</version>
-    <scope>provided</scope>
-    </dependency>
-    <dependency>
-	<groupId>javax.servlet</groupId>
-	<artifactId>servlet-api</artifactId>
-	<version>${version.servlet-api}</version>
-    </dependency>
-    <dependency>
-	<groupId>javax.servlet.jsp</groupId>
-	<artifactId>jsp-api</artifactId>
-	<version>${version.jsp-api}</version>
-    </dependency>
-    <dependency>
-	<groupId>javax.ws.rs</groupId>
-	<artifactId>jsr311-api</artifactId>
-	<version>${version.jsr311-api}</version>
-    </dependency>
-    </dependencies>
 
-    
-    <build>
-        <finalName>Restapp</finalName>
-        <plugins>
-            <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-eclipse-plugin</artifactId>
-            <version>${version.eclipse-plugin}</version>
-            <configuration>
-                <wtpmanifest>true</wtpmanifest>
-                <wtpapplicationxml>true</wtpapplicationxml>
-                <wtpversion>${version.eclipse-wtp}</wtpversion>
-            </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version.maven-compiler}</version>
-                <inherited>true</inherited>
-                <configuration>
-                    <source>${version.java}</source>
-                    <target>${version.java}</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
-    
-    <reporting>
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${version.javax.servlet-api}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${version.servlet-api}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>${version.jsp-api}</version>
+		</dependency>
+		<!-- <dependency> <groupId>javax.ws.rs</groupId> <artifactId>jsr311-api</artifactId> 
+			<version>${version.jsr311-api}</version> </dependency> -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-multipart-provider</artifactId>
+			<version>${version.resteasy}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>[4.11,)</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<finalName>Restapp</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>${version.eclipse-plugin}</version>
+				<configuration>
+					<wtpmanifest>true</wtpmanifest>
+					<wtpapplicationxml>true</wtpapplicationxml>
+					<wtpversion>${version.eclipse-wtp}</wtpversion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.maven-compiler}</version>
+				<inherited>true</inherited>
+				<configuration>
+					<source>${version.java}</source>
+					<target>${version.java}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<reporting>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -98,7 +116,7 @@
 			</plugin>
 		</plugins>
 	</reporting>
-    
-   
-   
+
+
+
 </project>
